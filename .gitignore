@@ -106,3 +106,5 @@ ENV/
 # Vim
 *.swp
 *.swo
+
+data/private/
