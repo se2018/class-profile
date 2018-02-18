@@ -26,3 +26,32 @@ columns = ['timestamp', 'email', 'gender', 'location', 'is_international', 'ethn
            # Future
            'preferred_company_size', 'work_loc', 'se_friendships', 'career_motives', 'grad_school', 'num_years_soft_eng',
            'preferred_tech_discipline', 'school_debt', 'se_advice']
+
+columns_to_normalize = ['gender', 'location',
+           # Background
+           'family_income', 'admission_avg', 'hs_extras',
+           # Coding
+           'code_start_age', 'fav_lang', 'text_editor',
+           # Jobs
+           'coop_name_1', 'coop_salary_1', 'coop_loc_1',
+           'coop_name_2', 'coop_salary_2', 'coop_loc_2',
+           'coop_name_3', 'coop_salary_3', 'coop_loc_3',
+           'coop_name_4', 'coop_salary_4', 'coop_loc_4',
+           'coop_name_5', 'coop_salary_5', 'coop_loc_5',
+           'coop_name_6', 'coop_salary_6', 'coop_loc_6',
+           'fav_coop',
+           # Lifestyle
+           'sleep_time',
+           # School
+           'uni_extras', 'fav_course', 'least_fav_course',
+           'term_avg_1a',
+           'term_avg_1b',
+           'term_avg_2a',
+           'term_avg_2b',
+           'term_avg_3a',
+           'term_avg_3b',
+           'term_avg_4a',
+           'hardest_term', 'easiest_term', 'preferred_program',
+           # Future
+           'career_motives',
+           'preferred_tech_discipline', 'school_debt', 'se_advice']
