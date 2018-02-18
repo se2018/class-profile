@@ -1,3 +1,8 @@
+"""Important
+If you're planning on changing a column name, make sure to change it for both
+lists columns and columns_to_normalize
+"""
+
 columns = ['timestamp', 'email', 'gender', 'location', 'is_international', 'ethnicity',
            # Background
            'parents_edu', 'parents_technical', 'family_income', 'admission_avg', 'hs_extras',
