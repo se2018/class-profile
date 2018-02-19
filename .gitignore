@@ -108,3 +108,5 @@ ENV/
 *.swo
 
 data/private/
+private/
+*/private/
