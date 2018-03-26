@@ -60,3 +60,4 @@ columns_to_normalize = ['gender', 'location',
            # Future
            'career_motives',
            'preferred_tech_discipline', 'school_debt', 'se_advice']
+columns_to_normalize = columns # This will just give me each column separately so that I can start processing data.
