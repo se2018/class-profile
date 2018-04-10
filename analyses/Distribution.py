@@ -2,7 +2,6 @@
 metadata on the distribution.
 """
 import numpy as np
-import json
 
 
 class Distribution:
@@ -16,34 +15,46 @@ class Distribution:
         self.arr = np.array(arr)
 
     def mean(self):
+        if self.count() == 0:
+            return None
         return np.mean(self.arr)
 
     def stddev(self):
+        if self.count() == 0:
+            return None
         return np.std(self.arr)
 
     def count(self):
         return self.arr.size
 
     def minimum(self, include_zero=False):
+        if self.count() == 0:
+            return None
         num = np.amin(self.arr)
         if include_zero and num == 0:
             return np.partition(self.arr, 1)[1]
         return num
 
     def maximum(self):
+        if self.count() == 0:
+            return None
         return np.amax(self.arr)
 
     def median(self):
+        if self.count() == 0:
+            return None
         return np.median(self.arr)
 
     def split_count(self):
+        if self.count() == 0:
+            return [[], [], [], []]
         upper = self.arr[self.arr >= self.mean()]
         lower = self.arr[self.arr < self.mean()]
 
         s1 = lower[lower < self.mean() - self.stddev()].tolist()
-        s2 = lower[lower > self.mean() - self.stddev()].tolist()
+        s2 = lower[lower >= self.mean() - self.stddev()].tolist()
         s3 = upper[upper < self.mean() + self.stddev()].tolist()
-        s4 = upper[upper > self.mean() + self.stddev()].tolist()
+        s4 = upper[upper >= self.mean() + self.stddev()].tolist()
 
         return [s1, s2, s3, s4]
 
@@ -59,4 +70,4 @@ class Distribution:
             'errors': self.errors
         }
 
-        return json.dumps(s, indent=True)
+        return s
