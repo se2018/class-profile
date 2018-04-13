@@ -13,6 +13,7 @@ class Distribution:
         if None in c:
             self.errors.append('Found ' + str(c[None]) + ' occurrences of None. Removed.')
         self.arr = np.array(arr)
+        self.arr = self.arr[self.arr != 0]
 
     def mean(self):
         if self.count() == 0:
