@@ -19,15 +19,19 @@ class Bucket:
         s = {}
         s['col_name'] = self.col_name
         s['col_value'] = self.col_value
-        if self.size() < 3:
-            s['message'] = 'Only ' + str(self.size()) + ' entries, not enough points.'
+        if self.max_size() < 3:
+            s['message'] = 'Only ' + str(self.max_size()) + ' entries, not enough points.'
             return s
         s['grades'] = [d.summary() for d in self.grades]
         s['salaries'] = [d.summary() for d in self.salaries]
+        s['size'] = self.max_size()
         return s
 
     def size(self):
         return min(min(map(lambda x: x.count(), self.grades)), min(map(lambda x: x.count(), self.salaries)))
+
+    def max_size(self):
+        return max(max(map(lambda x: x.count(), self.grades)), min(map(lambda x: x.count(), self.salaries)))
 
     @staticmethod
     def create_from_bucket(col_name, buckets):
