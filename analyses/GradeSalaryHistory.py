@@ -12,10 +12,20 @@ class GradeSalaryHistory:
         self.salary = salary
 
     def avg_salary(self):
-        return np.mean(self.salaries[self.salaries != 0])
+        temp = self.salaries[self.salaries != 0]
+        if temp.size == 0:
+            return 0.0
+        return np.nanmean(temp)
 
     def cum_avg(self):
-        return np.mean(self.grades[self.grades != 0])
+        temp = self.grades[self.grades != 0]
+        if temp.size == 0:
+            return 0.0
+        cum_avg = np.nanmean(temp)
+        if math.isnan(cum_avg):
+            return 0.0
+        else:
+            return cum_avg
 
     def city(self):
         if len(self.location.split(',')) < 2:
