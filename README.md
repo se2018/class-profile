@@ -1,5 +1,5 @@
 # se-2018-class-profile
-An analysis of se 2018 class profile survey results. Here is the [Analysis plan](https://paper.dropbox.com/doc/Analysis-Plan-FFNs8uboDURRprv4qbZGQ).
+An analysis of se 2018 class profile survey results.
 
 ## Workflow
 The data first gets normalized by hand so that it can be processed a lot easier. This is a back and forth process, and is documented in [here](https://github.com/chrisjluc/se-2018-class-profile/blob/master/Normalization_Plan.md).
