@@ -27,6 +27,18 @@ class GradeSalaryHistory:
         else:
             return cum_avg
 
+    def recent_grade(self):
+        temp = self.grades[self.grades != 0]
+        if temp.size == 0:
+            return 0.0
+        return temp[-1]
+
+    def recent_salary(self):
+        temp = self.salary[self.salary != 0]
+        if temp.size == 0:
+            return 0.0
+        return temp[-1]
+
     def city(self):
         if len(self.location.split(',')) < 2:
             return ''
@@ -54,6 +66,7 @@ class GradeSalaryHistory:
             'highest_grade': self.max_grade(),
             'highest_salary': self.max_salary(),
             'result_salary': self.salary,
+            'recent_grade': self.recent_grade(),
             'city': self.city(),
             'country': self.country()
         }
