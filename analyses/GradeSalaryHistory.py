@@ -34,7 +34,7 @@ class GradeSalaryHistory:
         return temp[-1]
 
     def recent_salary(self):
-        temp = self.salary[self.salary != 0]
+        temp = self.salaries[self.salaries != 0]
         if temp.size == 0:
             return 0.0
         return temp[-1]
@@ -67,6 +67,7 @@ class GradeSalaryHistory:
             'highest_salary': self.max_salary(),
             'result_salary': self.salary,
             'recent_grade': self.recent_grade(),
+            'recent_salary': self.recent_salary(),
             'city': self.city(),
             'country': self.country()
         }
